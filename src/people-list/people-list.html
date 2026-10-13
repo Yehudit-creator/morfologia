@@ -1,1 +1,8 @@
-<p>people-list works!</p>
+<div>
+      <h2>רשימת אנשי קשר</h2>
+      <ul>
+        <li *ngFor="let contact of contacts">
+          <contact [name]="contact.name" [email]="contact.email" [phone]="contact.phone"></contact>
+        </li>
+      </ul>
+</div>
