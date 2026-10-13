@@ -1,0 +1,24 @@
+.item{
+    margin: 10px 0;
+    background-color: #00383a;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+.contact-container {
+  border: 1px solid #ccc; /* מסגרת לכרטיס */
+  border-radius: 8px; /* כדי לעגל את הפינות */
+  padding: 15px; /* ריפוד פנימי */
+  margin: 10px; /* רווח בין כרטיסים */
+  background-color: #f9f9f9; /* צבע רקע */
+  transition: box-shadow 0.3s; /* מעבר חלק בהצללות */
+}
+.contact-container:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* הצללה כשמעלים את העכבר */
+}
+
+/* סגנונות עבור כותרת איש קשר */
+.contact-container h3 {
+  margin: 0; /* אין רווחים */
+  color: #333; /* צבע טקסט */
+}
