@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
+import { ContactInterface } from '../contact-interface';
 
 @Component({
   imports: [],
@@ -7,7 +8,9 @@ import { Component, Input } from '@angular/core';
   templateUrl: './contact.html',
 })
 export class Contact {
-  @Input() singleContact!: { name: string; email: string; phone: string };
+  @Input() con!:ContactInterface;
+  //  = { name: '', email: '', phone: '' };
+  // @Input() singleContact!: { name: string; email: string; phone: string };
   // @Input() name!: string; 
   // @Input() email!: string; 
   // @Input() phone!: string ;
