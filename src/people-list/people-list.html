@@ -1,8 +1,10 @@
-<div>
-      <h2>רשימת אנשי קשר</h2>
-      <ul>
-        <li *ngFor="let contact of contacts">
-          <contact [name]="contact.name" [email]="contact.email" [phone]="contact.phone"></contact>
-        </li>
-      </ul>
-</div>
+<h2>אנשי קשר</h2>
+
+@for (c of contacts; track c.id) {
+  <app-contact
+    [name]="c.name"
+    [email]="c.email"
+    [phone]="c.phone" />
+} @empty {
+  <p>אין אנשי קשר להצגה</p>
+}
