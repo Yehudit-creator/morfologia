@@ -1,2 +1,29 @@
+<section class="newsletter">
+  <div class="newsletter-box">
+    <h2>הצטרפי לרשימת התפוצה</h2>
+    <p>טיפים, מאמרים ותוכן על עולם הכירולוגיה, ישירות למייל. בלי ספאם, ואפשר להסיר בכל עת.</p>
 
-<h1>Hello home!</h1>
+    @if (!subscribed()) {
+      <form class="newsletter-form" (submit)="subscribe($event)">
+        <input
+          type="text"
+          name="name"
+          placeholder="שם מלא"
+          [value]="name()"
+          (input)="name.set($any($event.target).value)"
+          required />
+        <input
+          type="email"
+          name="email"
+          placeholder="כתובת אימייל"
+          dir="ltr"
+          [value]="email()"
+          (input)="email.set($any($event.target).value)"
+          required />
+        <button type="submit" class="btn btn-primary">הרשמה</button>
+      </form>
+    } @else {
+      <p class="success">תודה {{ name() }}! נרשמת בהצלחה לרשימת התפוצה ✓</p>
+    }
+  </div>
+</section>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,4 +6,17 @@ import { Component } from '@angular/core';
   styleUrl: './home.css',
   templateUrl: './home.html',
 })
-export class Home {}
+export class Home {
+    name = signal('');
+  email = signal('');
+  subscribed = signal(false);
+
+  subscribe(event: Event) {
+    event.preventDefault();
+
+    // כאן בהמשך שולחים לשרת או לשירות דיוור
+    console.log('נרשם:', this.name(), this.email());
+
+    this.subscribed.set(true);
+  }
+}

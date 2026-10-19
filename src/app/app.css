@@ -1,58 +1,98 @@
-/* h1 {
-font-size: 36px;
-margin-bottom: 20px;
-color: #f8f3f3;
+:host {
+  display: block;
 }
-h3 {
-font-size: 20px;
-margin-bottom: 20px;
-color: #f8f3f3;
-}
-header {
-  background-color: #d79d16;
-  padding: 20px;
-  text-align: center;
-}
-a{
-    color: #f8f3f3;
-     padding: 20px;
-    text-decoration: none;
-}
-footer {
-  background-color: #d79d16;
-  padding: 10px;
-  text-align: center;
-  padding-bottom: 20px;
-} */
 
 .page {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
- h1 {
-font-size: 36px;
-margin-bottom: 20px;
-color: #f8f3f3;
+  height: 100vh;
+  height: 100dvh;
 }
 
+/* ---------- כותרת עליונה ---------- */
 header {
-  background-color: #d79d16;
-  padding: 20px;
   text-align: center;
+  padding: 12px 20px 8px;
+  background: rgba(247, 237, 210, 0.7);
+  border-bottom: 4px double var(--sepia);
 }
-a{
-    color: #f8f3f3;
-     padding: 20px;
-    text-decoration: none;
+
+header h1 {
+  margin: 0 0 4px;
+  font-family: 'IM Fell English SC', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  letter-spacing: 6px;
+  color: var(--ink);
 }
+
+header h1::before,
+header h1::after {
+  content: '❦';
+  margin: 0 16px;
+  font-size: 0.6em;
+  color: var(--burgundy);
+  vertical-align: middle;
+}
+
+/* ---------- תפריט ---------- */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+
+nav a {
+  position: relative;
+  padding: 4px 4px;
+  color: var(--sepia);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background: var(--burgundy);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--burgundy);
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: var(--burgundy);
+}
+
+/* ---------- תוכן ---------- */
 main {
   flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
+/* ---------- תחתית ---------- */
 footer {
-  padding: 30px;
-   background-color: #d79d16;
+  padding: 8px 20px;
   text-align: center;
-  color: #f8f3f3;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--parchment-2);
+  background: #2b1d12;
+  border-top: 4px double var(--gold);
 }

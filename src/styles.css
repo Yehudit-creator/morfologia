@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=IM+Fell+English+SC&display=swap');
+
+:root {
+  --parchment: #f0e2bf;
+  --parchment-2: #e6d3a3;
+  --parchment-3: #f7edd2;
+  --ink: #2f2114;
+  --sepia: #6b4a2b;
+  --muted: #7a6444;
+  --burgundy: #7a2e22;
+  --gold: #a8802f;
+
+  /* איור כף יד בסגנון חיתוך עץ */
+  --palm: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'%3E%3Cg fill='none' stroke='%232f2114' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M30 110 C20 90 20 70 24 55 L22 30 C22 24 32 24 32 30 L34 50 L36 18 C36 11 46 11 46 18 L47 48 L50 12 C50 5 60 5 60 12 L60 48 L65 22 C65 16 74 17 74 23 L72 55 C78 48 84 44 88 48 C92 52 84 66 76 80 C72 92 72 104 70 110 Z'/%3E%3Cpath stroke='%237a2e22' d='M36 68 C46 74 56 75 70 66'/%3E%3Cpath stroke='%237a2e22' d='M34 80 C48 84 58 82 71 76'/%3E%3Cpath stroke='%237a2e22' d='M42 60 C42 80 48 96 58 106'/%3E%3C/g%3E%3C/svg%3E");
+
+  /* מרקם נייר */
+  --paper: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .28 0 0 0 0 .12 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  direction: rtl;
+  font-family: 'Frank Ruhl Libre', 'David', Georgia, serif;
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.6;
+  background:
+    var(--paper),
+    radial-gradient(ellipse at center, transparent 55%, rgba(120, 80, 30, 0.28) 100%),
+    var(--parchment);
+  background-attachment: fixed;
+}
+
+h1, h2, h3 {
+  font-family: 'Frank Ruhl Libre', 'David', Georgia, serif;
+}
+
+a {
+  color: var(--burgundy);
+}
+
+::selection {
+  background: var(--burgundy);
+  color: var(--parchment-3);
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--parchment-2); }
+::-webkit-scrollbar-thumb { background: var(--sepia); border-radius: 6px; }
